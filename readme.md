@@ -29,6 +29,7 @@ for that assignment have to be handed in via OLAT by 17:00 on the previous day
 | Date       | Assignment | Topics                                                      |
 | ---------- | ---------- | ----------------------------------------------------------- |
 | 2024-03-05 | -          | Administrative matters, introduction to LCC3                |
+| 2024-03-12 | [1](01)    | Working on LCC3, initial measurements                       |
 
 ## General Information
 
