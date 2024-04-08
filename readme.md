@@ -32,6 +32,7 @@ for that assignment have to be handed in via OLAT by 17:00 on the previous day
 | 2024-03-12 | [1](01)    | Working on LCC3, initial measurements                       |
 | 2024-03-19 | [2](02)    | LCC3 hardware, Amdahl's law                                 |
 | 2024-04-09 | [3](03)    | Sequential performance, cache effects                       |
+| 2024-04-16 | [4](04)    | OpenMP parallelism, performance analysis, false sharing     |
 
 ## General Information
 
