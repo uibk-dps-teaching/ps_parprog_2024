@@ -34,6 +34,7 @@ for that assignment have to be handed in via OLAT by 17:00 on the previous day
 | 2024-04-09 | [3](03)    | Sequential performance, cache effects                       |
 | 2024-04-16 | [4](04)    | OpenMP parallelism, performance analysis, false sharing     |
 | 2024-04-23 | [5](05)    | OpenMP performance analysis and flush                       |
+| 2024-04-30 | [6](06)    | Dependence Analysis                                         |
 
 ## General Information
 
