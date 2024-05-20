@@ -38,6 +38,7 @@ for that assignment have to be handed in via OLAT by 17:00 on the previous day
 | 2024-05-07 | [7](07)    | OpenMP correctness, auto-vectorization, dependence analysis |
 | 2024-05-14 | [8](08)    | OpenMP affinity and loop scheduling                         |
 | 2024-05-21 | [9](09)    | Vectorization                                               |
+| 2024-05-28 | [10](10)   | OpenMP task parallelism, heat stencil                       |
 
 ## General Information
 
