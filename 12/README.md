@@ -1,4 +1,4 @@
-# Assignment 12 for June 20th, 2023
+# Assignment 12
 
 The goal of this assignment is to study program optimizations of scalar architectures.
 
@@ -84,7 +84,7 @@ for (int i = 0; i < N - 1; ++i) {
 }
 ```
 
-1) Apply loop-invariant code motion (`a` is of type `double *`):
+2) Apply loop-invariant code motion (`a` is of type `double *`):
 
 ```C
 for (int i = 0; i < N; ++i) {
@@ -92,7 +92,7 @@ for (int i = 0; i < N; ++i) {
 }
 ```
 
-1) Apply loop unswitching:
+3) Apply loop unswitching:
 
 ```C
 for (int i = 0; i < N; ++i) {
@@ -104,7 +104,7 @@ for (int i = 0; i < N; ++i) {
 }
 ```
 
-1) Apply loop fission/distribution. Does this transformation impact the number of cache misses?
+4) Apply loop fission/distribution. Does this transformation impact the number of cache misses?
 
 ```C
 for (int i = 0; i < N; ++i) {
@@ -114,7 +114,7 @@ for (int i = 0; i < N; ++i) {
 }
 ```
 
-1) Apply loop peeling and loop fusion/combination. Note that `N` is larger than `0`.
+5) Apply loop peeling and loop fusion/combination. Note that `N` is larger than `0`.
 
 ```C
 int min = a[0];
@@ -126,7 +126,7 @@ for (int i = 0; i < N; ++i) {
 }
 ```
 
-1) Apply loop splitting:
+6) Apply loop splitting:
 
 ```C
 for (int i = 0; i < N; ++i) {
@@ -138,7 +138,7 @@ for (int i = 0; i < N; ++i) {
 }
 ```
 
-1) Apply loop tiling (`a`, `b`, and `c` are of type `double`). You can assume that a macro `BLOCK_SIZE`, which is defined in some boilerplate code, defines a suitable block size for tiling (e.g., `#define BLOCK_SIZE 64 / sizeof(double)`). \
+7) Apply loop tiling (`a`, `b`, and `c` are of type `double`). You can assume that a macro `BLOCK_SIZE`, which is defined in some boilerplate code, defines a suitable block size for tiling (e.g., `#define BLOCK_SIZE 64 / sizeof(double)`). \
 
 ```C
 for (int i = 0; i < N; ++i) {
