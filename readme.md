@@ -41,6 +41,7 @@ for that assignment have to be handed in via OLAT by 17:00 on the previous day
 | 2024-05-28 | [10](10)   | OpenMP task parallelism, heat stencil                       |
 | 2024-06-04 | [11](11)   | Profiling and parallelization of a mystery application      |
 | 2024-06-11 | [12](12)   | Scalar architectures and optimizations                      |
+| 2024-06-18 | [13](13)   | N-Body simulation                                           |
 
 ## General Information
 
