@@ -16,48 +16,49 @@ For each timestep (you can assume `dt = 1`), particles must be moved by first co
 
 ### Tasks
 
-1) Provide a sequential implementation of the n-body simulation in 3D. Hints on how to proceed (not mandatory to follow):
-  a. generate particles randomly, e.g. uniformly distributed
-  b. provide a function for computing forces and moving particles
-  c. move particles in a time loop for a given number of steps
-2) Measure the execution time for various particle numbers and timesteps. What can you observe?
-3) Implement a parallel version the n-body simulation. Optimize your code as much as possible, consider all the optimizations that we discussed this course. Which optimizations are suitable for this kind of problem? Benchmark your optimized version for multiple numbers of threads and discuss the results.
-4) Write your data to a file (e.g. `data.dat` ) and use any visualization tool to visualize the movement of the data
-    Here is an example using `gnuplot`:
+1. Provide a sequential implementation of the n-body simulation in 3D. Hints on how to proceed (not mandatory to follow):
+   1. generate particles randomly, e.g. uniformly distributed
+   2. provide a function for computing forces and moving particles 
+   3. move particles in a time loop for a given number of steps
+2. Measure the execution time for various particle numbers and timesteps. What can you observe?
+3. Implement a parallel version the n-body simulation. Optimize your code as much as possible, consider all the optimizations that we discussed in this course. Which optimizations are suitable for this kind of problem? Benchmark your optimized version for multiple numbers of threads and discuss the results.
+4. Write your data to a file (e.g. `data.dat` ) and use any visualization tool to visualize the movement of the data.
+   Here is an example using `gnuplot`:
+   
+   1. 
+   ````
+      set terminal gif animate delay 100  # set gif to animate in a frame delay of 100 ms
+      set output 'output.gif' # write to the file output.gif
 
-    a. ````
-        set terminal gif animate delay 100  # set gif to animate in a frame delay of 100 ms
-        set output 'output.gif' # write to the file output.gif
+           set style line 2 lc rgb 'black' pt 7   # set line to be a filled circle of color black
+           stats 'data.dat' nooutput # read data from data.dat file 
+           set xrange [-0.5:100.5] # print data values for x axis from range [-0.5:100.5]
+           set yrange [-0.5:100.5] # print data values for y axis from range [-0.5:100.5]
+           set zrange [-0.5:100.5] # print data values for z axis from range [-0.5:100.5]
 
-        set style line 2 lc rgb 'black' pt 7   # set line to be a filled circle of color black
-        stats 'data.dat' nooutput # read data from data.dat file 
-        set xrange [-0.5:100.5] # print data values for x axis from range [-0.5:100.5]
-        set yrange [-0.5:100.5] # print data values for y axis from range [-0.5:100.5]
-        set zrange [-0.5:100.5] # print data values for z axis from range [-0.5:100.5]
-
-        do for [i=1:int(STATS_blocks)] {
-           splot 'data.dat' index (i-1) with points ls 2 ps 0.4 #for each datapoint plot the point
-        }
-       ````
-    b. use this [gnuplot](particle.plt) snippet to create a gif, adapt this file according to your particle range implementation
-    c. the data for the previous example has to be in following format:
-        ````
-            x1_timestep1 y1_timestep1 z1_timestep1
-            x2_timestep1 y2_timestep1 z2_timestep1
-            x3_timestep1 y3_timestep1 z3_timestep1
-
-
-            x1_timestep2 y1_timestep2 z1_timestep2
-            x2_timestep2 y2_timestep2 z2_timestep2
-            x3_timestep2 y3_timestep2 z3_timestep2
+           do for [i=1:int(STATS_blocks)] {
+              splot 'data.dat' index (i-1) with points ls 2 ps 0.4 #for each datapoint plot the point
+           }
+   ````
+   2. use this [gnuplot](particle.plt) snippet to create a gif, adapt this file according to your particle range implementation
+   3. the data for the previous example has to be in following format:
+   ````
+      x1_timestep1 y1_timestep1 z1_timestep1
+      x2_timestep1 y2_timestep1 z2_timestep1
+      x3_timestep1 y3_timestep1 z3_timestep1
 
 
-            x1_timestep3 y1_timestep3 z1_timestep3
-            x2_timestep3 y2_timestep3 z2_timestep3
-            x3_timestep3 y3_timestep3 z3_timestep3
-        ````
-       So in one line there is an x, y, and z value for a point, multiple points are in different lines. 
-       Having 2 blank lines means the points for this timestep are finished. Note that all values can be floating point numbers
+      x1_timestep2 y1_timestep2 z1_timestep2
+      x2_timestep2 y2_timestep2 z2_timestep2
+      x3_timestep2 y3_timestep2 z3_timestep2
+
+
+      x1_timestep3 y1_timestep3 z1_timestep3
+      x2_timestep3 y2_timestep3 z2_timestep3
+      x3_timestep3 y3_timestep3 z3_timestep3
+   ````
+   So in one line there is an x, y, and z value for a point, multiple points are in different lines. 
+   Having 2 blank lines means the points for this timestep are finished. Note that all values can be floating point numbers
 5) For measuring performance either disable writing to a datafile or consider not dumping each timestep
 6) Benchmark the sequential program and the parallelized version using 5000 particles and 100 time steps for 12 threads on LCC3 and enter the results in the comparison spreadsheet linked on Discord.
 
